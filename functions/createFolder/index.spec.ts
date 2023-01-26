@@ -1,6 +1,11 @@
-describe('test d"un test', () => {
+import {Folder} from "../../class/Folder";
 
-    it('should return 3 if number is 3', () => {
-        expect(3).toEqual(3)
-    })
+describe("create folder test", () => {
+
+  const folderName = "Folder#1";
+  const folder = new Folder(folderName);
+
+  it("check if the folder has been created with the correct name", () => {
+    expect(folder.name).toEqual(folderName);
+  });
 })

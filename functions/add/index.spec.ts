@@ -1,12 +1,37 @@
-import {addDocuments} from "./index"
-import {Doc} from "../../document";
+import {File} from "../../class/File";
+import {Folder} from "../../class/Folder";
 
-describe('tests d\'ajout d\'un document', () => {
+describe('adding file test', () => {
 
-    it('should return Error if document don\'t have name', () => {
-        expect(addDocuments("")).toEqual(Error)
+    const folderName = "Folder#1";
+    const folder = new Folder(folderName);
+
+    const fileName = "File#1";
+    const file = new File(fileName);
+
+
+    it("check if the on the creation the folder have empty files", () => {
+        expect(folder.files.length).toEqual(0);
+    });
+
+    //just to check if the new intern haven't deleted the function
+    it("check if the addFile method exists", () => {
+        expect(folder.addFile).toBeDefined();
+    });
+
+    it("check if addFile has been add a file", () => {
+        folder.addFile(file);
+        expect(folder.files.length).toEqual(1);
+    });
+
+    it("check if the file has correctly been add", () => {
+        folder.addFile(file);
+        expect(folder.files).toContain(file)
     })
-    it('should return [\'Document.txt\'] if document name\'s is Document.txt', () => {
-        expect(addDocuments("Document.txt")).toEqual({"name": "Document.txt", "signed": false})
+
+    it("check if the file name has not a twin file in the folder", () => {
+        folder.addFile(file);
+        folder.addFile(file);
+        expect(folder.files).toHaveLength(1);
     })
 })
