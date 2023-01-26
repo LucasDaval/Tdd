@@ -1,9 +1,10 @@
-export const addDocuments = (docName: string): Array<string> => {
-    let arrayOfDocs = []
-    if (docName === "") {
-        return arrayOfDocs
-    }
-    arrayOfDocs.push(docName)
+import {Doc} from "../../document";
 
-    return arrayOfDocs
+export const addDocuments = (documentName: String): Doc => {
+    if (documentName === "") {
+        throw new Error("Please enter a document name!")
+    }
+    const newDoc = new Doc(documentName)
+
+    return newDoc
 }
