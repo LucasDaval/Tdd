@@ -1,6 +1,11 @@
-describe('test d"un test', () => {
+import {addDocuments} from "./index"
 
-    it('should return 3 if number is 3', () => {
-        expect(3).toEqual(3)
+describe('tests d\'ajout d\'un document', () => {
+
+    it('should return [] if document don\'t have name', () => {
+        expect(addDocuments("")).toEqual([])
+    })
+    it('should return [\'Document.txt\'] if document name\'s is Document.txt', () => {
+        expect(addDocuments("Document.txt")).toEqual(['Document.txt'])
     })
 })
