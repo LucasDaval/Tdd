@@ -15,15 +15,15 @@ describe('adding file test', () => {
     folder.addFile(file);
     folder.addFile(fileTOTO);
 
-    it("check if the addFile method exists", () => {
+    it("check if the findFile method exists", () => {
         expect(folder.findFile(file.name)).toBeDefined();
     });
 
-    it("check if the addFile method find and return the file", () => {
+    it("check if the findFile method find and return the file", () => {
         expect(folder.findFile(fileTOTO.name)).toEqual(fileTOTO);
     });
 
-    it("check if the addFile method doesn't find and return a wrong file", () => {
+    it("check if the findFile method doesn't find and return a wrong file", () => {
         expect(folder.findFile(fileTOTO.name)).not.toEqual(file);
     });
 

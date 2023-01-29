@@ -17,9 +17,9 @@ Usecases:
 - Supprimer tous les documents
 - Archiver un document ✅
 - Signer un document ✅
-- Faire des dossiers (Ranger)
+- Faire des dossiers (Ranger) ✅
 - Deplacer un document
-- Envoyer un document
+- Envoyer un document ✅
 - Compter nos documents
 - Telecharger un document
-- Dupliquer un document
+- Dupliquer un document ✅
