@@ -10,8 +10,6 @@ describe('duplicating file test', () => {
     const file1 = new File(fileName1);
 
     folder.addFile(file1);
-
-    console.log(folder);
     
 
     //just to check if the new intern haven't deleted the function
@@ -21,8 +19,6 @@ describe('duplicating file test', () => {
 
     it("should return true if file exists", () => {
         expect(folder.duplicateFile(file1)).toBeTruthy();
-        console.log(folder);
-        
     })
 
     it("check if a new file '-copy' exists", () => {
