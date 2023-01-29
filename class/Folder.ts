@@ -22,6 +22,10 @@ export class Folder {
     }
   }
 
+  public countFile = (folderToCount: Folder): number => {
+    return folderToCount.files.length;
+  }
+
   public deleteFile = (fileToDelete: File): boolean => {
     if (this.files.find(file => file === fileToDelete)){
       const index = this.files.indexOf(fileToDelete);
@@ -68,5 +72,11 @@ export class Folder {
       }
     });
     return folderToSort.files
+}
+  public removeAll = (folderToClear: Folder) => {
+    folderToClear.files.forEach((e) => {
+      const index = this.files.indexOf(e);
+      this.files.splice(index, 1);
+    })
   }
 }
