@@ -1,6 +1,28 @@
-describe('test d"un test', () => {
+import {File} from "../../class/File";
+import {Folder} from "../../class/Folder";
 
-    it('should return 3 if number is 3', () => {
-        expect(3).toEqual(3)
+describe('duplicating file test', () => {
+
+    const folderName = "Folder#1";
+    const folder = new Folder(folderName);
+
+    const fileName1 = "File#1";
+    const file1 = new File(fileName1);
+
+    folder.addFile(file1);
+    
+
+    //just to check if the new intern haven't deleted the function
+    it("check if the duplicateFile method exists", () => {
+        expect(folder.duplicateFile).toBeDefined();
+    });
+
+    it("should return true if file exists", () => {
+        expect(folder.duplicateFile(file1)).toBeTruthy();
     })
+
+    it("check if a new file '-copy' exists", () => {
+        folder.duplicateFile(file1);
+        expect(folder.findFile("File#1-copy"))
+    });
 })
