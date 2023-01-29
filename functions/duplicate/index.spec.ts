@@ -14,8 +14,6 @@ describe('duplicating file test', () => {
 
   const numberFile = folder.files.length;
 
-
-  //just to check if the new intern haven't deleted the function
   it("check if the duplicateFile method exists", () => {
     expect(folder.duplicateFile).toBeDefined();
   });

@@ -58,4 +58,10 @@ export class Folder {
       }
   }
 
+  public removeAll = (folderToClear: Folder) => {
+    folderToClear.files.forEach((e) => {
+      const index = this.files.indexOf(e);
+      this.files.splice(index, 1);
+    })
+  }
 }
