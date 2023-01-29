@@ -1,16 +1,25 @@
-import { signed, sign } from "./index";
+import {File} from "../../class/File";
+
+let docA = new File('docA');
+docA.signed = true
+let docB = new File('docB');
 
 describe('Signing a document', () => {
     it('should return true because the "docA" document is signed', () => {
-        expect(signed({name: 'docA', signed: true})).toBeTruthy()
+        expect(File.isSigned(docA)).toBeTruthy()
     })
     it('should return false because the "docB" document is not signed', () => {
-        expect(signed({name: 'docB', signed: false})).toBeFalsy()
+        expect(File.isSigned(docB)).toBeFalsy()
     })
     it('should sign the docB', () => {
-        expect(sign({name: 'docB', signed: false})).toBeTruthy()
+        expect(File.sign(docB)).toBeTruthy()
     })
     it('should return error because docA is already sign', () => {
-        expect(sign({name: 'docA', signed: true})).toEqual('Error, this document is already sign')
+        try {
+            File.sign(docA)
+        }catch (e) {
+            expect(e).toEqual(new Error('Error, this document is already sign'))
+        }
+
     })
 })

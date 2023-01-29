@@ -5,5 +5,5 @@ export const signed = (document: File) => {
 }
 export const sign =(document: File) => {
     if(document.signed === false) return document.signed = true
-    else return 'Error, this document is already sign'
+    else throw new Error('Error, this document is already sign');
 }
