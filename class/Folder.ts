@@ -22,14 +22,19 @@ export class Folder {
     }
   }
 
+  public deleteFile = (fileToDelete: File) => {
+    if (this.files.find(file => file === fileToDelete)){
+      const index = this.files.indexOf(fileToDelete);
+      this.files.splice(index, 1);
+    }
+  }
+
   public archiveFile = (fileToArchive: File) => {
     if (!this.files.find(file => file === fileToArchive)) return false
       if(this.archivedFiles.push(fileToArchive)) {
         const index = this.files.indexOf(fileToArchive);
         this.files.splice(index, 1);
       }
-
-
   }
 
 }
