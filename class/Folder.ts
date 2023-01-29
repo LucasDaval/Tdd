@@ -29,11 +29,12 @@ export class Folder {
       return true;
     } else return false;
   }
-
-  public findFile = (fileToFind: File) => {
-    return this.files.find(file => file === fileToFind)
+  public renameFile(file: File, fileRenamed: string) {
+    file.name = fileRenamed
   }
-
+  public renameFolder(folder: Folder, folderRenamed: string) {
+    folder.name = folderRenamed
+  }
   public archiveFile = (fileToArchive: File) => {
     if (!this.files.find(file => file === fileToArchive)) return false
       if(this.archivedFiles.push(fileToArchive)) {
