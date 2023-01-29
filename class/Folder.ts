@@ -30,10 +30,17 @@ export class Folder {
     } else return false;
   }
 
-  public findFile = (fileToFind: File) => {
-    return this.files.find(file => file === fileToFind)
+  public duplicateFile = (fileToDuplicate: File): boolean => {
+    if (this.files.find(file => file === fileToDuplicate)){
+      this.files.push(new File(fileToDuplicate.name + "-copy"));
+      return true;
+    } else return false;
   }
-  
+
+  public findFile = (fileNameToFind: string) => {
+    return this.files.find(file => file.name === fileNameToFind)
+  }
+
   public renameFile(file: File, fileRenamed: string) {
     file.name = fileRenamed
   }
