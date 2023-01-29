@@ -8,9 +8,8 @@
 
 Usecases:
 
-- Voir la liste de nos documents
 - Trier les documents ✅
-- Rechercher un document (choisir les champs interessants, filtres ?) ✅
+- Rechercher un document (choisir les champs interessants) ✅
 - Rajouter un document ✅
 - Supprimer un document ✅
 - Renommer un document ✅
@@ -18,10 +17,9 @@ Usecases:
 - Archiver un document ✅
 - Signer un document ✅
 - Faire des dossiers (Ranger) ✅
-- Deplacer un document
+- Deplacer un document ✅
 - Envoyer un document ✅
 - Compter nos documents ✅
-- Telecharger un document
 - Dupliquer un document ✅
 
 ## Librairie / Langage
