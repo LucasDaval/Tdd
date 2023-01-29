@@ -14,5 +14,15 @@ export class File {
         else throw new Error('Error, this document is already sign');
     }
 
+    static sendFile =(document: File, EmailTo: string) => {
+        // regex to see if Emailformat is correct
+        const validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        if(validEmail.test(EmailTo)){
+            return true
+        } else {
+            throw new Error("l'adresse email n'est pas valide")
+        }
+    }
+
 
 }

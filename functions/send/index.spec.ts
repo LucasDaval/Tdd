@@ -1,6 +1,21 @@
-describe('test d"un test', () => {
+import {File} from "../../class/File";
 
-    it('should return 3 if number is 3', () => {
-        expect(3).toEqual(3)
+describe('Sending an email', () => {
+
+    const fileName = "File#1";
+    const file = new File(fileName);
+
+    it('check if sendFile method exist', () => {
+        expect(File.sendFile).toBeDefined()
+    })
+    it('should return error because email is not valid', () => {
+        try {
+            File.sendFile(file, 'notadresseemail')
+        }catch (e) {
+            expect(e).toEqual(new Error("l'adresse email n'est pas valide"))
+        }
+    })
+    it('should return true if a correct email is send', () => {
+        expect(File.sendFile(file, "test@gmail.com")).toBeTruthy()
     })
 })
