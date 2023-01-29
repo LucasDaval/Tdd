@@ -12,10 +12,10 @@ describe('Sending an email', () => {
         try {
             File.sendFile(file, 'notadresseemail')
         }catch (e) {
-            expect(e).toEqual(new Error("l'adresse email n'est pas valide"))
+            expect(e).toEqual(new Error("email adress is not valid"))
         }
     })
     it('should return true if a correct email is send', () => {
-        expect(File.sendFile(file, "test@gmail.com")).toBeTruthy()
+        expect(File.sendFile(file, "test@gmail.com")).toEqual({sucess: 'the file has been sent successfully'})
     })
 })

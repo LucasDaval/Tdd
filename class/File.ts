@@ -1,5 +1,3 @@
-import {Folder} from "./Folder";
-
 export class File {
     name: any;
     signed: boolean;
@@ -20,15 +18,12 @@ export class File {
         // regex to see if Emailformat is correct
         const validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         if(validEmail.test(EmailTo)){
-            return true
+            return {sucess: 'the file has been sent successfully'}
         } else {
-            throw new Error("l'adresse email n'est pas valide")
+            throw new Error("email adress is not valid")
         }
     }
-    static move =(file:File, to:Folder, oldFolder) => {
-        oldFolder.deleteFile(file)
-        to.addFile(file)
-    }
+
 
 
 

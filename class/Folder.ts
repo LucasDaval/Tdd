@@ -79,4 +79,9 @@ export class Folder {
       this.files.splice(index, 1);
     })
   }
+
+  static move =(file:File, to:Folder, oldFolder) => {
+    oldFolder.deleteFile(file)
+    to.addFile(file)
+  }
 }

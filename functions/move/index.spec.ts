@@ -11,14 +11,14 @@ describe('move file to another folder', () => {
     folder1.addFile(file)
 
     it('check if move method exist', () => {
-        expect(File.move).toBeDefined()
+        expect(Folder.move).toBeDefined()
     })
     it('should move file to folder 2', () => {
-        File.move(file, folder2, folder1)
+        Folder.move(file, folder2, folder1)
         expect(folder2.files).toEqual([file])
     })
     it('should delete file in folder1 if file move to folder2', () => {
-        File.move(file, folder2, folder1)
+        Folder.move(file, folder2, folder1)
         expect(folder1.files.length).toEqual(0)
     })
 })
