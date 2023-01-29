@@ -30,14 +30,13 @@ export class Folder {
     } else return false;
   }
 
-  public duplicateFile = (fileToDuplicate: File): boolean => {
+  public duplicateFile = (fileToDuplicate: File, extension?: string): number => {
     if (this.files.find(file => file === fileToDuplicate)){
-      this.files.push(new File(fileToDuplicate.name + "-copy"));
-      return true;
-    } else return false;
+      return this.files.push(new File(fileToDuplicate.name + (extension ? extension : "-copy")));
+    } else return -1;
   }
 
-  public findFile = (fileNameToFind: string) => {
+  public findFile = (fileNameToFind: string): File => {
     return this.files.find(file => file.name === fileNameToFind)
   }
 
