@@ -22,7 +22,8 @@ describe('remove all files test', () => {
     });
 
     it("check if removeAll had deleted all the file", () => {
-        folder.deleteFile(file1);
+        folder.addFile(file1);
+        folder.removeAll(folder);
         expect(folder.files).not.toContain(file1);
     });
 
@@ -30,8 +31,10 @@ describe('remove all files test', () => {
     //     expect(folder.removeAll(folder)).
     // });
 
-    it("check if deleteFile has been deleted the right file", () => {
-        folder.deleteFile(file1);
-        expect(folder.files).toContain(file2);
+    it("check if removeAll has been deleted the right file", () => {
+        folder.addFile(file1);
+        folder.addFile(file2);
+        folder.removeAll(folder);
+        expect(folder.files).not.toContain(file2 || file1);
     })
 })
