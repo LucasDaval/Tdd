@@ -29,6 +29,11 @@ export class Folder {
       return true;
     } else return false;
   }
+
+  public findFile = (fileToFind: File) => {
+    return this.files.find(file => file === fileToFind)
+  }
+  
   public renameFile(file: File, fileRenamed: string) {
     file.name = fileRenamed
   }
