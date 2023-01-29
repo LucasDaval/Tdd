@@ -1,3 +1,5 @@
+import {Folder} from "./Folder";
+
 export class File {
     name: any;
     signed: boolean;
@@ -23,6 +25,11 @@ export class File {
             throw new Error("l'adresse email n'est pas valide")
         }
     }
+    static move =(file:File, to:Folder, oldFolder) => {
+        oldFolder.deleteFile(file)
+        to.addFile(file)
+    }
+
 
 
 }
