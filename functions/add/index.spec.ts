@@ -14,7 +14,6 @@ describe('adding file test', () => {
         expect(folder.files.length).toEqual(0);
     });
 
-    //just to check if the new intern haven't deleted the function
     it("check if the addFile method exists", () => {
         expect(folder.addFile).toBeDefined();
     });

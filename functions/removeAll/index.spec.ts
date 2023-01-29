@@ -1,7 +1,7 @@
 import {File} from "../../class/File";
 import {Folder} from "../../class/Folder";
 
-describe('deleting file test', () => {
+describe('remove all files test', () => {
 
     const folderName = "Folder#1";
     const folder = new Folder(folderName);
@@ -15,18 +15,20 @@ describe('deleting file test', () => {
     folder.addFile(file1);
     folder.addFile(file2);
 
-    it("check if the deleteFile method exists", () => {
-        expect(folder.deleteFile).toBeDefined();
+    const nbFileInFolder = folder.files.length;
+
+    it("check if the removeAll method exists", () => {
+        expect(folder.removeAll).toBeDefined();
     });
 
-    it("should return false if file doesn't exist", () => {
-        expect(folder.deleteFile(new File("File#3"))).toBeFalsy();
-    })
-
-    it("check if deleteFile had deleted the file", () => {
+    it("check if removeAll had deleted all the file", () => {
         folder.deleteFile(file1);
         expect(folder.files).not.toContain(file1);
     });
+
+    // it("check folder is going to be empty after removeAll function", () => {
+    //     expect(folder.removeAll(folder)).
+    // });
 
     it("check if deleteFile has been deleted the right file", () => {
         folder.deleteFile(file1);
