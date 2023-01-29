@@ -40,7 +40,7 @@ export class Folder {
   public findFile = (fileNameToFind: string) => {
     return this.files.find(file => file.name === fileNameToFind)
   }
-  
+
   public renameFile(file: File, fileRenamed: string) {
     file.name = fileRenamed
   }
