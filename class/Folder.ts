@@ -5,7 +5,6 @@ export class Folder {
   files: File[];
   archivedFiles: File[];
 
-
   constructor(name) {
     this.name = name;
     this.files = [];
@@ -60,24 +59,21 @@ export class Folder {
 
   public sort = (folderToSort: Folder, typeOfSort: string) => {
     folderToSort.files.sort(function(a, b) {
-      let nameA = a.name.toUpperCase();
-      let nameB = b.name.toUpperCase();
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toUpperCase();
       if (nameA < nameB) {
         if(typeOfSort === 'alpha') return -1
-        else  if(typeOfSort === '!alpha') return 1
+        else if(typeOfSort === '!alpha') return 1
       }
       if (nameA > nameB) {
         if(typeOfSort === 'alpha') return 1
-        else  if(typeOfSort === '!alpha') return -1
+        else if(typeOfSort === '!alpha') return -1
       }
     });
-    return folderToSort.files
+    return folderToSort.files;
 }
-  public removeAll = (folderToClear: Folder) => {
-    folderToClear.files.forEach((e) => {
-      const index = this.files.indexOf(e);
-      this.files.splice(index, 1);
-    })
+  public removeAll = () => {
+    this.files = [];
   }
 
   static move =(file:File, to:Folder, oldFolder) => {
