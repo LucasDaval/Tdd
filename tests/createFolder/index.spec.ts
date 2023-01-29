@@ -8,6 +8,6 @@ describe("create folder test", () => {
   it("check has been correctly initialized", () => {
     expect(folder.name).toEqual(folderName);
     expect(folder.files).toHaveLength(0);
-    expect(folder.archiveFile).toHaveLength(0);
+    expect(folder.archivedFiles).toHaveLength(0);
   });
 })
