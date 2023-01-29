@@ -24,6 +24,17 @@ Usecases:
 - Telecharger un document
 - Dupliquer un document ✅
 
+## Librairie / Langage
+* [Typescript](https://www.typescriptlang.org/docs/)
+* [jest](https://jestjs.io/fr/docs/getting-started)
+
+## Set up
+<pre>yarn install</pre>
+
+## Commandes
+<pre>yarn test @script@ --coverage</pre>
+
+
 ## Auteurs
 * Canberra Menthonnex alias [@CanberraMenthonnex](https://github.com/CanberraMenthonnex)
 * Armand Dorard alias [@Ericar974](https://github.com/Ericar974)
