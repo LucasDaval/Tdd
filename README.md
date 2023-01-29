@@ -24,7 +24,7 @@ Usecases:
 - Telecharger un document
 - Dupliquer un document ✅
 
-## Auteur
+## Auteurs
 * Canberra Menthonnex alias [@CanberraMenthonnex](https://github.com/CanberraMenthonnex)
 * Armand Dorard alias [@Ericar974](https://github.com/Ericar974)
 * Lucas DAVAL alias [@LucasDaval](https://github.com/LucasDaval)
