@@ -30,6 +30,10 @@ export class Folder {
     } else return false;
   }
 
+  public findFile = (fileToFind: File) => {
+    return this.files.find(file => file === fileToFind)
+  }
+
   public archiveFile = (fileToArchive: File) => {
     if (!this.files.find(file => file === fileToArchive)) return false
       if(this.archivedFiles.push(fileToArchive)) {
