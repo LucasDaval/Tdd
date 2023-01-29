@@ -20,9 +20,8 @@ describe('deleting file test', () => {
         expect(folder.deleteFile).toBeDefined();
     });
 
-    //TODO: check if delete file exist
-    it("should return false if file doesn't exist", () => {
-
+    it("check if deletedFile exist", () => {
+        expect(file1).toBeDefined()
     })
 
     it("check if deleteFile had deleted the file", () => {
