@@ -15,7 +15,7 @@ describe("archive test", () => {
         expect(folder.archivedFiles.length).toEqual(0);
     })
 
-    it("should find the file selected", () => {
+    it("shouldn't find the selected file", () => {
         const file2 = new File("File#2");
         expect(folder.archiveFile(file2)).toBeFalsy();
     })

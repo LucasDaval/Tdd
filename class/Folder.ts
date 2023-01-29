@@ -13,20 +13,21 @@ export class Folder {
   }
 
   public addFile = (file: File) => {
-    const key = Object.keys(file)[0];
-    const isDuplicate = this.files.some(function(obj) {
-      return obj.hasOwnProperty(key);
+    const isDuplicate = this.files.some((obj) => {
+      return obj["name"] === file["name"];
     });
+
     if (!isDuplicate) {
       this.files.push(file);
     }
   }
 
-  public deleteFile = (fileToDelete: File) => {
+  public deleteFile = (fileToDelete: File): boolean => {
     if (this.files.find(file => file === fileToDelete)){
       const index = this.files.indexOf(fileToDelete);
       this.files.splice(index, 1);
-    }
+      return true;
+    } else return false;
   }
 
   public archiveFile = (fileToArchive: File) => {

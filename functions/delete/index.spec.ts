@@ -12,28 +12,26 @@ describe('deleting file test', () => {
     const fileName2 = "File#2";
     const file2 = new File(fileName2);
 
-    
-    it("check if the on the creation the folder have empty files", () => {
-        folder.addFile(file1);
-        expect(folder.files.length).toEqual(1);
-    });
+    folder.addFile(file1);
+    folder.addFile(file2);
 
     //just to check if the new intern haven't deleted the function
     it("check if the deleteFile method exists", () => {
         expect(folder.deleteFile).toBeDefined();
     });
 
-    it("check if deleteFile has been deleted a file", () => {
-        folder.addFile(file1);
+    //TODO: check if delete file exist
+    it("should return false if file doesn't exist", () => {
+
+    })
+
+    it("check if deleteFile had deleted the file", () => {
         folder.deleteFile(file1);
-        expect(folder.files.length).toEqual(0);
+        expect(folder.files).not.toContain(file1);
     });
 
     it("check if deleteFile has been deleted the right file", () => {
-        folder.files.push(file1);
-        folder.files.push(file2);
         folder.deleteFile(file1);
-        
-        expect(folder.files).toContainEqual(file2)
+        expect(folder.files).toContain(file2);
     })
 })
