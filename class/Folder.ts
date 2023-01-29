@@ -54,4 +54,19 @@ export class Folder {
       }
   }
 
+  public sort = (folderToSort: Folder, typeOfSort: string) => {
+    folderToSort.files.sort(function(a, b) {
+      let nameA = a.name.toUpperCase();
+      let nameB = b.name.toUpperCase();
+      if (nameA < nameB) {
+        if(typeOfSort === 'alpha') return -1
+        else  if(typeOfSort === '!alpha') return 1
+      }
+      if (nameA > nameB) {
+        if(typeOfSort === 'alpha') return 1
+        else  if(typeOfSort === '!alpha') return -1
+      }
+    });
+    return folderToSort.files
+  }
 }
