@@ -1,4 +1,4 @@
-export class Doc {
+export class File {
     name: any;
     signed: boolean;
     constructor(name) {
