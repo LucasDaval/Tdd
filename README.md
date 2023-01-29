@@ -9,14 +9,14 @@
 Usecases:
 
 - Trier les documents ✅
-- Rechercher un document (choisir les champs interessants) ✅
+- Rechercher un document ✅
 - Rajouter un document ✅
 - Supprimer un document ✅
 - Renommer un document ✅
 - Supprimer tous les documents ✅
 - Archiver un document ✅
 - Signer un document ✅
-- Faire des dossiers (Ranger) ✅
+- Faire des dossiers ✅
 - Deplacer un document ✅
 - Envoyer un document ✅
 - Compter nos documents ✅
@@ -34,6 +34,6 @@ Usecases:
 
 
 ## Auteurs
-* Canberra Menthonnex alias [@CanberraMenthonnex](https://github.com/CanberraMenthonnex)
-* Armand Dorard alias [@Ericar974](https://github.com/Ericar974)
-* Lucas DAVAL alias [@LucasDaval](https://github.com/LucasDaval)
+* Canberra Menthonnex aka [@CanberraMenthonnex](https://github.com/CanberraMenthonnex)
+* Armand Dorard aka [@Ericar974](https://github.com/Ericar974)
+* Lucas DAVAL aka [@LucasDaval](https://github.com/LucasDaval)
